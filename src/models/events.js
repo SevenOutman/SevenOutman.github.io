@@ -22,7 +22,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname }) => {
-        if (pathname === '/events') {
+        if (pathname === '/events' || pathname === '/') {
           dispatch({ type: 'fetch' });
         }
       });
