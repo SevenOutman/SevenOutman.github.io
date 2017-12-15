@@ -1,7 +1,7 @@
-import * as eventsService from '../services/events';
+import * as eventsService from '../services/repos';
 
 export default {
-  namespace: 'events',
+  namespace: 'repos',
   state: [],
   reducers: {
     save(state, { payload: { data: list } }) {
@@ -22,7 +22,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname }) => {
-        if (pathname === '/events') {
+        if (pathname === '/repos') {
           dispatch({ type: 'fetch' });
         }
       });

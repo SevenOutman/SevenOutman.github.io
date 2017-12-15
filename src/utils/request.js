@@ -1,5 +1,12 @@
 import fetch from 'dva/fetch';
 
+const essentialOptions = {
+  headers: {
+    Accept: 'application/vnd.github.v3+json',
+    Authorization: 'token a9426eaed076b5ded4b2eac107d391640942beb9'
+  }
+};
+
 function parseJSON(response) {
   return response.json();
 }
@@ -22,7 +29,7 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default async function request(url, options) {
-  const response = await fetch(url, options);
+  const response = await fetch(url, Object.assign({}, essentialOptions, options));
 
   checkStatus(response);
 
