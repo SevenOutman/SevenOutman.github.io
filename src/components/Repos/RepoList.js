@@ -9,13 +9,7 @@ function RepoList ({ repos: dataSource, loading }) {
       title: 'Name',
       key: 'name',
       width: 200,
-      render: repo => <a href={repo.url} target="_blank" rel="noopener noreferer">{repo.name}</a>,
-    },
-    {
-      title: 'Full Name',
-      dataIndex: 'full_name',
-      key: 'full_name',
-      width: 260,
+      render: repo => <a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>,
     },
     {
       title: 'Language',
@@ -24,9 +18,9 @@ function RepoList ({ repos: dataSource, loading }) {
       width: 100,
     },
     {
-      title: 'Stargazers',
+      title: 'Stars',
       dataIndex: 'stargazers_count',
-      key: 'stargazers',
+      key: 'stars',
       width: 120,
     },
     {

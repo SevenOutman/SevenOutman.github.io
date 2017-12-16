@@ -9,8 +9,6 @@ function Sider ({ location }) {
   return (
     <AntSider
       className={styles.normal}
-      trigger={null}
-      collapsible
     >
       <a
         className={styles.logo}
@@ -23,7 +21,8 @@ function Sider ({ location }) {
       </a>
       <Menu
         theme="dark" mode="inline"
-        selectedKeys={location.pathname === '/' ? ['/events'] : [location.pathname]}>
+        selectedKeys={location.pathname === '/' ? ['/events'] : [location.pathname]}
+      >
         <Menu.Item key="/events">
           <Link to="/events">
             <Icon type="user" />

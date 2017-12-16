@@ -1,7 +1,7 @@
-import request from '../utils/request';
+import request from '../utils/request'
 
-const HOST = 'https://api.github.com';
+const HOST = 'https://api.github.com'
 
-export function fetch() {
-  return request(`${HOST}/users/SevenOutman/repos?sort=updated`);
+export function fetch () {
+  return request(`${HOST}/user/repos?sort=updated`)
 }
