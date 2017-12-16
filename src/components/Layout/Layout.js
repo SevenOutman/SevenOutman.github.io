@@ -3,7 +3,7 @@ import { Layout as AntLayout } from 'antd'
 import Sider from './Sider'
 import styles from './Layout.less'
 
-const { Content } = AntLayout
+const { Content, Footer } = AntLayout
 
 function Layout ({ location, children }) {
   return (
@@ -13,6 +13,10 @@ function Layout ({ location, children }) {
         <Content className={styles.content}>
           {children}
         </Content>
+        <Footer>
+          Inspired by <a href="http://antd-admin.zuiidea.com/" target="_blank" rel="noopener noreferrer">Ant Design
+          Admin</a>
+        </Footer>
       </AntLayout>
     </AntLayout>
   )
