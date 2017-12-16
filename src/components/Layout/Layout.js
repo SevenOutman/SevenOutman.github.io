@@ -10,7 +10,7 @@ function Layout ({ location, children }) {
     <AntLayout className={styles.normal}>
       <Sider location={location} />
       <AntLayout>
-        <Content style={{ margin: '24px 16px', padding: 24, background: '#fff' }}>
+        <Content className={styles.content}>
           {children}
         </Content>
       </AntLayout>

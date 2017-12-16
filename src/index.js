@@ -13,6 +13,8 @@ app.use(createLoading());
 // app.model(require('./models/example'));
 app.model(require("./models/events"));
 
+app.model(require("./models/dashboard"));
+
 app.model(require("./models/repos"));
 
 // 4. Router

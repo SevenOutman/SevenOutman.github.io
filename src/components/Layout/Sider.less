@@ -1,4 +1,6 @@
+@import "~antd/lib/style/themes/default.less";
 
+@dark-half: #494949;
 .normal {
   background-color: #3e3e3e;
   color: #999;
@@ -6,6 +8,18 @@
   :global .ant-menu-dark {
     color: #999;
     background-color: #3e3e3e;
+
+    .ant-menu-item {
+      & > a {
+        color: #999;
+      }
+      &.ant-menu-item-selected {
+        background-color: @dark-half;
+        & > a {
+          color: @primary-color;
+        }
+      }
+    }
   }
   .logo {
     text-align: center;

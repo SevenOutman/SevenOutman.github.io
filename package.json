@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "antd": "^3.0.1",
+    "axios": "^0.17.1",
     "babel-runtime": "^6.9.2",
+    "classnames": "^2.2.5",
     "dva": "^2.1.0",
     "dva-loading": "^1.0.4",
     "prop-types": "^15.6.0",
@@ -36,5 +38,8 @@
     "husky": "^0.12.0",
     "redbox-react": "^1.4.3",
     "roadhog": "^1.2.1"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^3.0.3"
   }
 }

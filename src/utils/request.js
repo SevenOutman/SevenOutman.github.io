@@ -1,24 +1,20 @@
-import fetch from 'dva/fetch';
+import axios from 'axios'
 
 const essentialOptions = {
-  headers: {
-    Accept: 'application/vnd.github.v3+json',
-    Authorization: 'token a9426eaed076b5ded4b2eac107d391640942beb9'
-  }
-};
-
-function parseJSON(response) {
-  return response.json();
 }
 
-function checkStatus(response) {
+function parseJSON (response) {
+  return response.json()
+}
+
+function checkStatus (response) {
   if (response.status >= 200 && response.status < 300) {
-    return response;
+    return response
   }
 
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
+  const error = new Error(response.statusText)
+  error.response = response
+  throw error
 }
 
 /**
@@ -28,21 +24,8 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export default async function request(url, options) {
-  const response = await fetch(url, Object.assign({}, essentialOptions, options));
+export default async function request (url, options) {
+  const response = await axios(url, Object.assign({}, essentialOptions, options))
 
-  checkStatus(response);
-
-  const data = await response.json();
-
-  const ret = {
-    data,
-    headers: {},
-  };
-
-  if (response.headers.get('x-total-count')) {
-    ret.headers['x-total-count'] = response.headers.get('x-total-count');
-  }
-
-  return ret;
+  return response
 }
