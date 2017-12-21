@@ -1,4 +1,4 @@
-import * as eventsService from '../services/repos';
+import * as ghService from '../services/github';
 
 export default {
   namespace: 'repos',
@@ -10,7 +10,7 @@ export default {
   },
   effects: {
     * fetch({ payload }, { call, put }) {
-      const { data } = yield call(eventsService.fetch);
+      const { data } = yield call(ghService.fetchRepos);
       yield put({
         type: 'save',
         payload: {

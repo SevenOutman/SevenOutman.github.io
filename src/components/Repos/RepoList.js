@@ -30,10 +30,10 @@ function RepoList ({ repos: dataSource, loading }) {
       width: 100,
     },
     {
-      title: 'Open Issues',
-      dataIndex: 'open_issues_count',
-      key: 'open_issues',
-      width: 120,
+      title: 'Updated At',
+      dataIndex: 'updated_at',
+      key: 'updated_at',
+      width: 180,
     },
     {
       title: 'Home Page',

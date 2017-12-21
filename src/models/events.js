@@ -1,4 +1,4 @@
-import * as eventsService from '../services/events'
+import * as ghService from '../services/github'
 
 export default {
   namespace: 'events',
@@ -10,7 +10,7 @@ export default {
   },
   effects: {
     * fetch ({ payload }, { call, put }) {
-      const { data } = yield call(eventsService.fetch)
+      const { data } = yield call(ghService.fetchReceivedEvents)
       yield put({
         type: 'save',
         payload: {
